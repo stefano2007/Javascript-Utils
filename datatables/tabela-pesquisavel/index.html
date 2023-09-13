@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data-tables</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="../lib/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../lib/data-tables/jquery.dataTables.min.js"></script>
+    <script src="../lib/data-tables/dataTables.bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../lib/data-tables/dataTables.bootstrap.min.css" />
+
+</head>
+<body>
+    <div class="container">
+        <h1>Tabela data-tables pesquisavel e recalculo</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <table id="tabelaProcessos" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Ano Criação</th>
+                            <th>Sigla</th>
+                            <th>Secretaria</th>
+                            <th>Processos</th>
+                            <th>Anexos</th>
+                            <th>Documentos</th>
+                            <th>Páginas</th>
+                        </tr>
+                    </thead>
+                    <tbody>    
+                    <tr>
+                        <td>2018</td>
+                        <td>SESURB</td>
+                        <td>SECRETARIA DE SERVIÇOS URBANOS</td>
+                        <td>60</td>
+                        <td>0</td>
+                        <td>714</td>
+                        <td>714</td>
+                    </tr>
+                    <tr>
+                        <td>2019</td>
+                        <td>SEFIN</td>
+                        <td>SECRETARIA DE FINANÇAS</td>
+                        <td>2.193</td>
+                        <td>0</td>
+                        <td>4.921</td>
+                        <td>20.868</td>
+                    </tr>
+                    <tr>
+                        <td>2019</td>
+                        <td>SEPLAN</td>
+                        <td>SECRETARIA DE PLANEJAMENTO</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>2019</td>
+                        <td>SESURB</td>
+                        <td>SECRETARIA DE SERVIÇOS URBANOS</td>
+                        <td>2.276</td>
+                        <td>0</td>
+                        <td>27.687</td>
+                        <td>27.921</td>
+                    </tr>
+                    <tr>
+                        <td>2020</td>
+                        <td>SEFIN</td>
+                        <td>SECRETARIA DE FINANÇAS</td>
+                        <td>3.874</td>
+                        <td>6</td>
+                        <td>9.820</td>
+                        <td>44.997</td>
+                    </tr>
+                    <tr>
+                        <td>2020</td>
+                        <td>SESURB</td>
+                        <td>SECRETARIA DE SERVIÇOS URBANOS</td>
+                        <td>2.500</td>
+                        <td>0</td>
+                        <td>43.329</td>
+                        <td>44.056</td>
+                    </tr>
+                    <tr>
+                        <td>2021</td>
+                        <td>SEFIN</td>
+                        <td>SECRETARIA DE FINANÇAS</td>
+                        <td>712</td>
+                        <td>34</td>
+                        <td>15.658</td>
+                        <td>34.664</td>
+                    </tr>
+                    <tr>
+                        <td>2021</td>
+                        <td>SEPLAN</td>
+                        <td>SECRETARIA DE PLANEJAMENTO</td>
+                        <td>37</td>
+                        <td>0</td>
+                        <td>635</td>
+                        <td>2.047</td>
+                    </tr>
+                    <tr>
+                        <td>2021</td>
+                        <td>SESURB</td>
+                        <td>SECRETARIA DE SERVIÇOS URBANOS</td>
+                        <td>2.999</td>
+                        <td>0</td>
+                        <td>22.248</td>
+                        <td>22.665</td>
+                    </tr>
+                    <tr>
+                        <td>2022</td>
+                        <td>SEFIN</td>
+                        <td>SECRETARIA DE FINANÇAS</td>
+                        <td>1.371</td>
+                        <td>418</td>
+                        <td>80.899</td>
+                        <td>465.212</td>
+                    </tr>
+                    <tr>
+                        <td>2022</td>
+                        <td>SEPLAN</td>
+                        <td>SECRETARIA DE PLANEJAMENTO</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>137</td>
+                        <td>384</td>
+                    </tr>
+                    <tr>
+                        <td>2022</td>
+                        <td>SESURB</td>
+                        <td>SECRETARIA DE SERVIÇOS URBANOS</td>
+                        <td>2.444</td>
+                        <td>0</td>
+                        <td>17.894</td>
+                        <td>18.413</td>
+                    </tr>
+                    <tr>
+                        <td>2022</td>
+                        <td>SEURB</td>
+                        <td>SECRETARIA DE URBANISMO</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1.176</td>
+                        <td>1.854</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>GP</td>
+                        <td>GABINETE DA PREFEITA</td>
+                        <td>13</td>
+                        <td>0</td>
+                        <td>71</td>
+                        <td>174</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>PROGEM</td>
+                        <td>PROCURADORIA GERAL DO MUNICÍPIO</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>SEAI</td>
+                        <td>SECRETARIA DE ASSUNTOS INSTITUCIONAIS</td>
+                        <td>132</td>
+                        <td>3</td>
+                        <td>745</td>
+                        <td>2.199</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>SEFIN</td>
+                        <td>SECRETARIA DE FINANÇAS</td>
+                        <td>7.397</td>
+                        <td>1.287</td>
+                        <td>79.425</td>
+                        <td>278.112</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>SEHAB</td>
+                        <td>SECRETARIA DE HABITAÇÃO</td>
+                        <td>58</td>
+                        <td>0</td>
+                        <td>698</td>
+                        <td>1.312</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>SEMA</td>
+                        <td>SECRETARIA DE MEIO AMBIENTE</td>
+                        <td>10</td>
+                        <td>0</td>
+                        <td>93</td>
+                        <td>210</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>SEPLAN</td>
+                        <td>SECRETARIA DE PLANEJAMENTO</td>
+                        <td>19</td>
+                        <td>1</td>
+                        <td>349</td>
+                        <td>1.225</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>SESAP</td>
+                        <td>SECRETARIA DE SAÚDE PÚBLICA</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>88</td>
+                        <td>10.083</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>SESURB</td>
+                        <td>SECRETARIA DE SERVIÇOS URBANOS</td>
+                        <td>1.364</td>
+                        <td>0</td>
+                        <td>10.796</td>
+                        <td>10.979</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>SEURB</td>
+                        <td>SECRETARIA DE URBANISMO</td>
+                        <td>101</td>
+                        <td>0</td>
+                        <td>637</td>
+                        <td>1.904</td>
+                        </tr>
+                    </tbody>
+                    
+                    <tfoot>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th id="totalProcessos">27.568</th>
+                            <th id="totalAnexos">1.749</th>
+                            <th id="totalDocumentos">318.030</th>
+                            <th id="totalFolhas">990.003</th>
+                        </tr>
+                    </tfoot>
+                </table>  
+            </div>
+        </div>
+    </div> 
+    
+</div>
+
+<script>
+    (function () {
+        //https://datatables.net/extensions/fixedheader/examples/styling/bootstrap.html
+        $(document).ready(function () {
+            let tabela = $('#tabelaProcessos');
+
+            function AtualizarTotaisRodape() {
+                const api = tabela.DataTable();
+
+                function getTotal(index) {
+                    return api
+                        .column(index, { page: 'current' })
+                        .data()
+                        .reduce((x, a) =>
+                            Number(x) + Number(a.replaceAll('.', ''))
+                            , 0)
+                        //converter para decimal
+                        .toLocaleString("pt-BR", {
+                            style: "decimal",
+                            currency: "BRL"
+                        });
+                }
+
+                try {
+
+                    $('#totalProcessos').html(getTotal(3));
+                    $('#totalAnexos').html(getTotal(4));
+                    $('#totalDocumentos').html(getTotal(5));
+                    $('#totalFolhas').html(getTotal(6));
+
+                } catch (e) {
+                    console.log('erro: ', e);
+                }
+            }
+
+            tabela.DataTable({
+                "scrollY": '400px',
+                "scrollCollapse": true,
+                "paging": false,
+                "bBootstrap": true,
+                "bLengthChange": true,
+                "bFilter": true,
+                "sPaginationType": "full_numbers",
+                "bDestroy": true,
+                "order": [[0, 'asc'], [1, 'asc']],
+                "oLanguage": {
+                    "sProcessing": "Processando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "Não foram encontrados resultados",
+                    "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando de 0 até 0 de 0 registros",
+                    "sInfoFiltered": "(filtrado de _MAX_ registros no total)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Pesquisar em todas as colunas:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "Primeiro",
+                        "sPrevious": "Anterior",
+                        "sNext": "Seguinte",
+                        "sLast": "Último"
+                    }
+                },
+                "sDom": '<"H"lf>t<"F"iTp>',
+                "oTableTools": {
+                    "aButtons": [],
+                    "sRowSelect": "single"
+                },
+                "aoColumnDefs": [
+                    { "sType": "numeric", "aTargets": [3, 4, 5, 6] }
+                ]
+            })
+            .on('order', function () {
+                console.log('Order');
+            })
+            .on('search', function () {
+                console.log('Search');
+                AtualizarTotaisRodape();
+            })
+            .on('page', function () {
+                console.log('Page');
+            });
+        });
+    })();
+</script>
+</body>
+</html>
